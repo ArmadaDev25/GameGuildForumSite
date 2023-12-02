@@ -5,3 +5,4 @@ from django.views.generic import DetailView
 
 class LandingPage(DetailView):
     model = GuildInfo
+    template_name = "landingpage.html"
