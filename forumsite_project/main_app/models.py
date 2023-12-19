@@ -18,5 +18,10 @@ class ParentPost(models.Model):
     postbody = models.CharField(max_length=1500)
     user = models.ForeignKey(User, default=None)
     
+    def __str__(self):
+        return self.posttitle
 
 
+class PostReply(models.Model):
+    replybody = models.CharField(max_length=1500)
+    user = models.ForeignKey(User, default=None)
