@@ -1,5 +1,8 @@
 from django.db import models
 
+#import for the user
+from django.contrib.auth.models import User
+
 # Create your models here.
 
 class GuildInfo(models.Model):
@@ -10,5 +13,10 @@ class GuildInfo(models.Model):
     def __str__(self):
         return self.name
 
+class ParentPost(models.Model):
+    posttitle = models.CharField(max_length=150)
+    postbody = models.CharField(max_length=1500)
+    user = models.ForeignKey(User, default=None)
+    
 
 
